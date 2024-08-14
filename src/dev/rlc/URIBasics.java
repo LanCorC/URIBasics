@@ -7,9 +7,11 @@ import java.net.URL;
 
 public class URIBasics {
     public static void main(String[] args) {
+
+        URI baseSite = URI.create("https://learningprogramming.academy");
         //no exceptions via this method
         URI timSite = URI.create(
-                "https://learningprogramming.academy/courses/complete-java-masterclass");
+                "courses/complete-java-masterclass");
         print(timSite);
 
         //constructor
@@ -17,7 +19,8 @@ public class URIBasics {
             URI uri = new URI("http://user:pw@store.com:5000/products/phones?os=android#samsung");
             print(uri);
 
-            URL url = timSite.toURL();
+            URI masterClass = baseSite.resolve(timSite);
+            URL url = masterClass.toURL();
             System.out.println(url);
             print(url);
 
