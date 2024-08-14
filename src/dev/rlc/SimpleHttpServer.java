@@ -40,14 +40,15 @@ public class SimpleHttpServer {
                                 <p>Number of Visitors who signed up = %d<p>
                                 <form method="post">
                                     <label for="first">First name:</label>
-                                    <input type="text" id="first" name="first" value "%s">
+                                    <input type="text" id="first" name="first" value="%s">
                                     <br>
                                     <label for="last">Last name:</label>
-                                    <input type="text" id="last" name="last" value%s>
+                                    <input type="text" id="last" name="last" value="%s">
                                     <br>
                                 <input type="submit" value="Submit">
+                                </form>
                             </body>
-                        </html""".formatted(visitorCounter,
+                        </html>""".formatted(visitorCounter,
                 firstName == null ? "" : firstName,
                 lastName == null ? "" : lastName);
                 var bytes = response.getBytes();
